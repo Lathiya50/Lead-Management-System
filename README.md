@@ -2,6 +2,10 @@
 
 A comprehensive REST API for managing leads, contacts, and interactions for Key Account Managers (KAMs).
 
+## Live Deployment
+
+The application is live at: https://lead-management-system-675b.onrender.com
+
 ## Features
 
 - Complete lead lifecycle management (New → Contacted → Qualified → Converting → Active)
@@ -28,7 +32,7 @@ A comprehensive REST API for managing leads, contacts, and interactions for Key 
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/Lathiya50/Lead-Management-System
 
 # Install dependencies
 npm install
@@ -159,7 +163,6 @@ API uses standard HTTP status codes:
 - 401: Unauthorized
 - 404: Not Found
 - 500: Server Error
-
 
 ## Contributing
 
