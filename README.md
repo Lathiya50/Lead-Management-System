@@ -48,10 +48,11 @@ npm run dev
 ## Environment Variables
 
 ```
-NODE_ENV=development
+NODE_ENV=development  # Ex. development, production etc
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/lead-management
 JWT_SECRET=your-jwt-secret
+JWT_EXPIRE=7d  # Ex. JWT token expiration time set to 7 days
 CORS_ORIGIN=https://example.com
 ```
 
