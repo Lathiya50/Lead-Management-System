@@ -26,3 +26,14 @@ exports.protect = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse(constants.ERROR_MESSAGES.UNAUTHORIZED, 401));
   }
 });
+
+const sendTokenResponse = (kam, statusCode, res) => {
+  // Create token
+  const token = kam.getSignedJwtToken();
+
+  res.status(statusCode).json({
+    success: true,
+    token,
+  });
+};
+exports.sendTokenResponse = sendTokenResponse;

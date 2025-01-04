@@ -55,6 +55,7 @@ if (cluster.isMaster) {
   app.use("/api/v1/interactions", require("./routes/interactionRoutes"));
   app.use("/api/v1/orders", require("./routes/orderRoutes"));
   app.use("/api/v1/kams", require("./routes/kamRoutes"));
+  app.use("/api/v1/auth", require("./routes/authRoutes"));
 
   app.get("/", (req, res) => res.send("API is running..."));
 

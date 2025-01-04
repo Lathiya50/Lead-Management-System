@@ -1,0 +1,677 @@
+{
+  "info": {
+    "name": "Lead Management System API",
+    "description": "API collection for Lead Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "{{base_url}}",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Leads",
+      "item": [
+        {
+          "name": "Get All Leads",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads"]
+            }
+          }
+        },
+        {
+          "name": "Create Lead",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"restaurantName\": \"Sample Restaurant\",\n    \"businessType\": \"Restaurant\",\n    \"status\": \"NEW\",\n    \"callFrequency\": \"WEEKLY\",\n    \"address\": \"123 Sample St\",\n    \"rating\": 4,\n    \"potentialValue\": \"HIGH\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads"]
+            }
+          }
+        },
+        {
+          "name": "Get Single Lead",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Lead",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"restaurantName\": \"Updated Restaurant\",\n    \"rating\": 5\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Lead",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Lead Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:id/stats",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":id", "stats"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Contacts",
+      "item": [
+        {
+          "name": "Get All Contacts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/contacts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "contacts"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe\",\n    \"role\": \"Manager\",\n    \"email\": \"john@example.com\",\n    \"phone\": \"+1234567890\",\n    \"isPrimaryContact\": true,\n    \"preferredContactTime\": \"MORNING\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/contacts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "contacts"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Single Contact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/contacts/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "contacts", ":id"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                },
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Contact",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated Name\",\n    \"phone\": \"+1987654321\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/contacts/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "contacts", ":id"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                },
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Interactions",
+      "item": [
+        {
+          "name": "Get All Interactions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/interactions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "interactions"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Interaction",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"CALL\",\n    \"notes\": \"Discussed menu options\",\n    \"outcome\": \"SUCCESSFUL\",\n    \"interactionDate\": \"2024-01-04T10:00:00Z\",\n    \"duration\": 30,\n    \"nextFollowUpDate\": \"2024-01-11T10:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/interactions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "interactions"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Single Interaction",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/interactions/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "interactions", ":id"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                },
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Interaction",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"notes\": \"Updated discussion notes\",\n    \"outcome\": \"FOLLOWUP_REQUIRED\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/interactions/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "interactions", ":id"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                },
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/orders",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "orders"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orderNumber\": \"ORD123\",\n    \"amount\": 1500,\n    \"status\": \"PENDING\",\n    \"items\": [\n        {\n            \"name\": \"Item 1\",\n            \"quantity\": 2,\n            \"price\": 750\n        }\n    ],\n    \"orderDate\": \"2024-01-04T10:00:00Z\",\n    \"paymentStatus\": \"PENDING\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/orders",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "orders"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Order Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/orders/stats",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "orders", "stats"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Single Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/orders/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "orders", ":id"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                },
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Order",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"CONFIRMED\",\n    \"paymentStatus\": \"PAID\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/leads/:leadId/orders/:id",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "leads", ":leadId", "orders", ":id"],
+              "variable": [
+                {
+                  "key": "leadId",
+                  "value": ""
+                },
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+        "name": "KAMs",
+        "item": [
+          {
+            "name": "Get All KAMs",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/v1/kams",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "kams"]
+              }
+            }
+          },
+          {
+            "name": "Create KAM",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"John Smith\",\n    \"email\": \"john.smith@example.com\",\n    \"phone\": \"+1234567890\",\n    \"timezone\": \"UTC\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/v1/kams",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "kams"]
+              }
+            }
+          },
+          {
+            "name": "Get Single KAM",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/v1/kams/:id",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "kams", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update KAM",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Updated Name\",\n    \"phone\": \"+1987654321\",\n    \"timezone\": \"UTC+1\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/v1/kams/:id",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "kams", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Delete KAM",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/v1/kams/:id",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "kams", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get KAM Performance",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/v1/kams/:id/performance?startDate=2024-01-01T00:00:00Z&endDate=2024-01-31T23:59:59Z",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "kams", ":id", "performance"],
+                "query": [
+                  {
+                    "key": "startDate",
+                    "value": "2024-01-01T00:00:00Z"
+                  },
+                  {
+                    "key": "endDate",
+                    "value": "2024-01-31T23:59:59Z"
+                  }
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get KAM Dashboard",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/v1/kams/dashboard",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "kams", "dashboard"]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Auth",
+        "item": [
+          {
+            "name": "Register",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"123456\",\n  \"phone\": \"1234567890\",\n  \"timezone\": \"UTC\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/v1/auth/register",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "auth", "register"]
+              }
+            }
+          },
+          {
+            "name": "Login",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"123456\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/v1/auth/login",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "auth", "login"]
+              }
+            }
+          },
+          {
+            "name": "Get Me",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer <token>"
+                }
+              ],
+              "url": {
+                "raw": "{{base_url}}/api/v1/auth/me",
+                "host": ["{{base_url}}"],
+                "path": ["api", "v1", "auth", "me"]
+              }
+            }
+          }
+        ]
+      }
+  ]
+}
