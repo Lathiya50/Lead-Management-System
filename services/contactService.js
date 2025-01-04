@@ -1,9 +1,7 @@
-// services/contactService.js
 const Contact = require("../models/Contact");
 
 class ContactService {
   async createContact(contactData) {
-    // If this is marked as primary contact, remove primary status from other contacts
     if (contactData.isPrimary) {
       await Contact.updateMany(
         { lead: contactData.lead },

@@ -51,6 +51,7 @@ NODE_ENV=development
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/lead-management
 JWT_SECRET=your-jwt-secret
+CORS_ORIGIN=https://example.com
 ```
 
 ## API Documentation

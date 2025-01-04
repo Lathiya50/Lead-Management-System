@@ -1,4 +1,3 @@
-// controllers/kamController.js
 const KAM = require("../models/KAM");
 const KAMService = require("../services/kamService");
 const ErrorResponse = require("../utils/errorResponse");

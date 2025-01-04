@@ -1,4 +1,3 @@
-// controllers/interactionController.js
 const Interaction = require("../models/Interaction");
 const Lead = require("../models/Lead");
 const ErrorResponse = require("../utils/errorResponse");

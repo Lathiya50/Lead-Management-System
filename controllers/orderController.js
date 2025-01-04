@@ -1,4 +1,3 @@
-// controllers/orderController.js
 const Order = require("../models/Order");
 const Lead = require("../models/Lead");
 const ErrorResponse = require("../utils/errorResponse");

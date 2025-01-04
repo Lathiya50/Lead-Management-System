@@ -1,4 +1,3 @@
-// services/kamService.js
 const KAM = require("../models/KAM");
 const Lead = require("../models/Lead");
 const ErrorResponse = require("../utils/errorResponse");

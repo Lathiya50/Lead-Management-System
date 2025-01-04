@@ -1,4 +1,3 @@
-// controllers/contactController.js
 const Contact = require("../models/Contact");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../utils/asyncHandler");

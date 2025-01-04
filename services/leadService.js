@@ -1,4 +1,3 @@
-// services/leadService.js
 const Lead = require("../models/Lead");
 const Order = require("../models/Order");
 const Interaction = require("../models/Interaction");

@@ -1,4 +1,3 @@
-// config/constants.js
 module.exports = {
   // Lead Status
   LEAD_STATUS: {
@@ -34,35 +33,6 @@ module.exports = {
     NOT_INTERESTED: "NOT_INTERESTED",
   },
 
-  // Order Status
-  ORDER_STATUS: {
-    PENDING: "PENDING",
-    CONFIRMED: "CONFIRMED",
-    DELIVERED: "DELIVERED",
-    CANCELLED: "CANCELLED",
-  },
-
-  // Payment Status
-  PAYMENT_STATUS: {
-    PENDING: "PENDING",
-    PAID: "PAID",
-    FAILED: "FAILED",
-  },
-
-  // Contact Time Preferences
-  CONTACT_TIME: {
-    MORNING: "MORNING",
-    AFTERNOON: "AFTERNOON",
-    EVENING: "EVENING",
-  },
-
-  // Potential Value Levels
-  POTENTIAL_VALUE: {
-    LOW: "LOW",
-    MEDIUM: "MEDIUM",
-    HIGH: "HIGH",
-  },
-
   // Pagination defaults
   PAGINATION: {
     DEFAULT_PAGE: 1,
@@ -77,12 +47,5 @@ module.exports = {
     VALIDATION_ERROR: "Validation error",
     SERVER_ERROR: "Internal server error",
     DUPLICATE_ENTRY: "Duplicate entry",
-  },
-
-  // Success Messages
-  SUCCESS_MESSAGES: {
-    CREATED: "Resource created successfully",
-    UPDATED: "Resource updated successfully",
-    DELETED: "Resource deleted successfully",
   },
 };

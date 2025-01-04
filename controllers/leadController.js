@@ -1,4 +1,3 @@
-// controllers/leadController.js
 const Lead = require("../models/Lead");
 const LeadService = require("../services/leadService");
 const Contact = require("../models/Contact");

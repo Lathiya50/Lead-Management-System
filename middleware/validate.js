@@ -1,4 +1,3 @@
-// middleware/validate.js
 const { validationResult } = require("express-validator");
 const ErrorResponse = require("../utils/errorResponse");
 const constants = require("../config/constants");
